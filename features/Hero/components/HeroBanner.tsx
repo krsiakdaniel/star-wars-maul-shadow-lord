@@ -5,7 +5,7 @@ export const HeroBanner = () => {
       <div
         className="absolute inset-0 animate-slow-zoom"
         style={{
-          backgroundImage: `url('/images/darth-maul-background-2.webp')`,
+          backgroundImage: `url('/images/background/background-darth-maul-1.webp')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center 20%',
           filter: 'saturate(1.3) brightness(0.75)',

@@ -1,14 +1,12 @@
 import Image from 'next/image'
 
-import { DISNEY_SHOW } from '@/data/constants'
-
 import { UI } from '@/texts/ui'
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-wrap justify-between items-center gap-4 px-5 py-6 md:px-16 md:py-8 border-t border-white/5">
+    <footer className="flex flex-wrap justify-between items-center gap-4 px-8 py-6 md:px-16 md:py-8 border-t border-white/5">
       <span
-        className="text-zinc-800"
+        className="text-red-600"
         style={{
           fontFamily: 'var(--font-cinzel), serif',
           fontSize: '0.8125rem',
@@ -16,18 +14,16 @@ export const Footer = () => {
           letterSpacing: '0.15em',
         }}
       >
-        {UI.footer.brand} — <span className="text-red-600">{UI.footer.brandAccent}</span>
+        {UI.footer.brand} — {UI.footer.brandAccent}
       </span>
-      <a
-        href={DISNEY_SHOW}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="opacity-30 hover:opacity-60 transition-opacity"
-        aria-label="Disney+"
-      >
-        <Image src="/images/logo/disney-logo.png" alt="Disney+" width={22} height={22} />
-      </a>
-      <span className="text-zinc-800" style={{ fontSize: '0.75rem' }}>
+      <Image
+        src="/images/logo/logo-disney.webp"
+        alt="Disney+"
+        width={40}
+        height={40}
+        className="opacity-40"
+      />
+      <span className="text-zinc-500" style={{ fontSize: '0.75rem' }}>
         {UI.footer.disclaimer}
       </span>
     </footer>

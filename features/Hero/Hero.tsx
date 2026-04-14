@@ -2,6 +2,8 @@
 
 import { useState } from 'react'
 
+import Image from 'next/image'
+
 import { UI } from '@/texts/ui'
 
 import { HeroActions } from './components/HeroActions'
@@ -15,55 +17,29 @@ export const Hero = () => {
   return (
     <>
       {/* HERO */}
-      <div className="relative flex items-end overflow-hidden h-[90vh] min-h-[600px]">
+      <div className="relative flex items-end overflow-hidden h-[90vh] min-h-150">
         <HeroBanner />
 
         {/* content */}
         <div
-          className="relative z-10 animate-hero-fade-up px-5 pb-14 md:px-7 md:pb-18 lg:px-16"
+          className="relative z-10 animate-hero-fade-up px-8 pb-14 md:pb-18 md:px-16"
           style={{ maxWidth: '620px' }}
         >
-          <p
-            className="flex items-center gap-3 mb-3 uppercase text-orange-500"
-            style={{
-              fontFamily: 'var(--font-cinzel), serif',
-              fontSize: '0.625rem',
-              fontWeight: 600,
-              letterSpacing: '0.45em',
-            }}
-          >
-            <span
-              className="block shrink-0 bg-orange-500"
-              style={{ width: '24px', height: '1.5px' }}
-            />
-            {UI.hero.eyebrow}
-          </p>
+          <p className="sr-only">{UI.hero.eyebrow}</p>
 
-          {/* title */}
-          <h1
-            className="text-white leading-none mb-2"
-            style={{
-              fontFamily: 'var(--font-cinzel), serif',
-              fontSize: 'clamp(3.25rem, 7vw, 5.625rem)',
-              fontWeight: 900,
-              textShadow: '0 2px 40px rgba(212,26,14,0.4)',
-            }}
-          >
-            {UI.hero.title}
+          {/* SEO-only heading — visually hidden, logo image shown instead */}
+          <h1 className="sr-only">
+            {UI.hero.eyebrow} {UI.hero.title} {UI.hero.subtitle}
           </h1>
 
-          {/* subtitle */}
-          <p
-            className="uppercase mb-5 text-orange-500"
-            style={{
-              fontFamily: 'var(--font-cinzel), serif',
-              fontSize: 'clamp(0.8125rem, 2vw, 1.25rem)',
-              fontWeight: 400,
-              letterSpacing: '0.4em',
-            }}
-          >
-            {UI.hero.subtitle}
-          </p>
+          <Image
+            src="/images/logo/logo-maul-shadow-lord.webp"
+            alt={`${UI.hero.eyebrow} ${UI.hero.title}: ${UI.hero.subtitle}`}
+            width={400}
+            height={150}
+            className="mb-5"
+            priority
+          />
 
           <HeroPills />
 

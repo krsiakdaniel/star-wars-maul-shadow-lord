@@ -7,4 +7,4 @@ export const IMDB_SHOW = 'https://www.imdb.com/title/tt36594331/episodes/?season
 export const TEASER_ID = 'oonACDq89BY'
 export const TEASER_EMBED_URL = `https://www.youtube.com/embed/${TEASER_ID}?autoplay=1&rel=0`
 
-export const EPISODE_PLACEHOLDER = '/images/darth-maul-preview.webp'
+export const EPISODE_PLACEHOLDER = '/images/episodes/episode-preview.webp'
