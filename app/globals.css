@@ -1,33 +1,33 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* ─── Design tokens ─────────────────────────────────────────── */
 :root {
   /* Brand */
-  --c-bg: theme(colors.zinc.950);         /* #09090b — page background  */
-  --c-text: theme(colors.stone.200);      /* #e7e5e4 — body text        */
-  --c-accent: theme(colors.orange.500);   /* #f97316 — Maul orange      */
-  --c-sith: theme(colors.red.600);        /* #dc2626 — Sith red         */
-  --c-sith-dark: theme(colors.red.900);   /* #7f1d1d — dark Sith / selection */
+  --c-bg: theme(colors.zinc.950); /* #09090b — page background  */
+  --c-text: theme(colors.stone.200); /* #e7e5e4 — body text        */
+  --c-accent: theme(colors.orange.500); /* #f97316 — Maul orange      */
+  --c-sith: theme(colors.red.600); /* #dc2626 — Sith red         */
+  --c-sith-dark: theme(colors.red.900); /* #7f1d1d — dark Sith / selection */
 
   /* Card surfaces */
-  --c-card: #16121a;    /* episode card background  */
-  --c-modal: #14101a;   /* modal panel background   */
+  --c-card: #16121a; /* episode card background  */
+  --c-modal: #14101a; /* modal panel background   */
 
   /* Text scale */
-  --c-text-secondary: theme(colors.stone.300);  /* #d6d3d1 — cast names      */
-  --c-text-muted: theme(colors.stone.400);      /* #a8a29e — overview text   */
-  --c-text-dim: theme(colors.zinc.400);         /* #a1a1aa — close / runtime */
-  --c-text-faint: theme(colors.zinc.500);       /* #71717a — date / runtime  */
-  --c-text-label: theme(colors.zinc.600);       /* #52525b — meta keys       */
-  --c-text-ghost: theme(colors.zinc.700);       /* #3f3f46 — very dim labels */
-  --c-text-brand: theme(colors.zinc.800);       /* #27272a — footer brand    */
+  --c-text-secondary: theme(colors.stone.300); /* #d6d3d1 — cast names      */
+  --c-text-muted: theme(colors.stone.400); /* #a8a29e — overview text   */
+  --c-text-dim: theme(colors.zinc.400); /* #a1a1aa — close / runtime */
+  --c-text-faint: theme(colors.zinc.500); /* #71717a — date / runtime  */
+  --c-text-label: theme(colors.zinc.600); /* #52525b — meta keys       */
+  --c-text-ghost: theme(colors.zinc.700); /* #3f3f46 — very dim labels */
+  --c-text-brand: theme(colors.zinc.800); /* #27272a — footer brand    */
 
   /* Pills */
-  --c-pill-blue: theme(colors.blue.400);        /* #60a5fa — "New Series"    */
-  --c-pill-red: theme(colors.red.400);          /* #f87171 — Rotten Tomatoes */
+  --c-pill-blue: theme(colors.blue.400); /* #60a5fa — "New Series"    */
+  --c-pill-red: theme(colors.red.400); /* #f87171 — Rotten Tomatoes */
 
   /* IMDb */
-  --c-imdb: theme(colors.yellow.400);           /* #facc15                   */
+  --c-imdb: theme(colors.yellow.400); /* #facc15                   */
 }
 
 * {
@@ -130,15 +130,15 @@ body {
 
 .animate-slow-zoom {
   -webkit-animation: slowZoom 20s ease-out forwards;
-          animation: slowZoom 20s ease-out forwards;
+  animation: slowZoom 20s ease-out forwards;
 }
 
 .animate-hero-fade-up {
   -webkit-animation: heroFadeUp 1s ease both;
-          animation: heroFadeUp 1s ease both;
+  animation: heroFadeUp 1s ease both;
 }
 
 .animate-card-fade-in {
   -webkit-animation: cardFadeIn 0.4s ease both;
-          animation: cardFadeIn 0.4s ease both;
+  animation: cardFadeIn 0.4s ease both;
 }

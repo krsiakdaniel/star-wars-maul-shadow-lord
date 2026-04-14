@@ -1,4 +1,4 @@
-import { type Episode } from "@/types/episode"
+import { type Episode } from '@/types/episode'
 
 export type EpisodeModalProps = {
   episode: Episode | null

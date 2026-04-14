@@ -1,25 +1,29 @@
-"use client"
+'use client'
 
-import { useEffect } from "react"
+import { useEffect } from 'react'
 
-import { TEASER_ID } from "@/data/constants"
-import { UI } from "@/texts/ui"
-import { type TrailerModalProps } from "./TrailerModal.types"
+import { X } from 'lucide-react'
+
+import { TEASER_EMBED_URL } from '@/data/constants'
+
+import { UI } from '@/texts/ui'
+
+import { type TrailerModalProps } from './TrailerModal.types'
 
 export const TrailerModal = ({ open, onClose }: TrailerModalProps) => {
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : ""
+    document.body.style.overflow = open ? 'hidden' : ''
     return () => {
-      document.body.style.overflow = ""
+      document.body.style.overflow = ''
     }
   }, [open])
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose()
+      if (e.key === 'Escape') onClose()
     }
-    document.addEventListener("keydown", handleKey)
-    return () => document.removeEventListener("keydown", handleKey)
+    document.addEventListener('keydown', handleKey)
+    return () => document.removeEventListener('keydown', handleKey)
   }, [onClose])
 
   return (
@@ -27,7 +31,7 @@ export const TrailerModal = ({ open, onClose }: TrailerModalProps) => {
       className="fixed inset-0 z-1000 flex items-center justify-center p-6 transition-opacity duration-300 backdrop-blur-md bg-black/88"
       style={{
         opacity: open ? 1 : 0,
-        pointerEvents: open ? "all" : "none",
+        pointerEvents: open ? 'all' : 'none',
       }}
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose()
@@ -36,10 +40,10 @@ export const TrailerModal = ({ open, onClose }: TrailerModalProps) => {
       <div
         className="relative w-full rounded-lg overflow-hidden bg-black shadow-2xl"
         style={{
-          maxWidth: "960px",
-          transform: open ? "scale(1) translateY(0)" : "scale(0.95) translateY(20px)",
-          transition: "transform 0.3s ease",
-          boxShadow: "0 32px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06)",
+          maxWidth: '960px',
+          transform: open ? 'scale(1) translateY(0)' : 'scale(0.95) translateY(20px)',
+          transition: 'transform 0.3s ease',
+          boxShadow: '0 32px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06)',
         }}
       >
         <button
@@ -47,12 +51,12 @@ export const TrailerModal = ({ open, onClose }: TrailerModalProps) => {
           onClick={onClose}
           aria-label={UI.trailer.ariaClose}
         >
-          ✕
+          <X size={16} />
         </button>
-        <div className="relative" style={{ aspectRatio: "16/9" }}>
+        <div className="relative" style={{ aspectRatio: '16/9' }}>
           {open && (
             <iframe
-              src={`https://www.youtube.com/embed/${TEASER_ID}?autoplay=1&rel=0`}
+              src={TEASER_EMBED_URL}
               className="absolute inset-0 w-full h-full border-none"
               allowFullScreen
               allow="autoplay"
@@ -64,4 +68,3 @@ export const TrailerModal = ({ open, onClose }: TrailerModalProps) => {
     </div>
   )
 }
-

@@ -1,4 +1,4 @@
-import { UI } from "@/texts/ui"
+import { UI } from '@/texts/ui'
 
 export const HeroPills = () => {
   return (

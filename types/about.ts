@@ -6,6 +6,4 @@ export interface CastMember {
 export interface ShowDetail {
   key: string
   value: string
-  accent: boolean
-  orange: boolean
 }

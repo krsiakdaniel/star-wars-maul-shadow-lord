@@ -1,13 +1,15 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
-import { EPISODES } from "@/data/episodes"
-import { Episode } from "@/types/episode"
-import { UI } from "@/texts/ui"
+import { EPISODES } from '@/data/episodes'
 
-import { EpisodeCard } from "./EpisodeCard"
-import { EpisodeModal } from "./EpisodeModal"
+import { UI } from '@/texts/ui'
+
+import { Episode } from '@/types/episode'
+
+import { EpisodeModal } from './EpisodeModal'
+import { EpisodeCard } from './components/EpisodeCard'
 
 export const EpisodeGrid = () => {
   const [selectedEpisode, setSelectedEpisode] = useState<Episode | null>(null)
@@ -16,21 +18,21 @@ export const EpisodeGrid = () => {
     <>
       <section
         className="mx-auto px-5 pt-12 pb-20 md:px-10 xl:px-16"
-        style={{ maxWidth: "1400px" }}
+        style={{ maxWidth: '1400px' }}
       >
         <div className="flex items-baseline justify-between mb-7">
           <span
             className="uppercase text-white"
             style={{
-              fontFamily: "var(--font-cinzel), serif",
-              fontSize: "0.8125rem",
+              fontFamily: 'var(--font-cinzel), serif',
+              fontSize: '0.8125rem',
               fontWeight: 600,
-              letterSpacing: "0.25em",
+              letterSpacing: '0.25em',
             }}
           >
             {UI.episodeGrid.seasonLabel}
           </span>
-          <span className="text-zinc-600" style={{ fontSize: "0.75rem" }}>
+          <span className="text-zinc-600" style={{ fontSize: '0.75rem' }}>
             {UI.episodeGrid.episodeCount}
           </span>
         </div>
@@ -55,5 +57,3 @@ export const EpisodeGrid = () => {
     </>
   )
 }
-
-

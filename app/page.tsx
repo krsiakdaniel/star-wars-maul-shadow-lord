@@ -1,9 +1,10 @@
-import { AboutSection } from "@/components/AboutSection"
-import { EpisodeGrid } from "@/components/EpisodeGrid"
-import { Footer } from "@/components/Footer"
-import { Hero } from "@/components/Hero"
+import { Footer } from '@/components/Footer'
 
-export default function Home() {
+import { AboutSection } from '@/features/About/AboutSection'
+import { EpisodeGrid } from '@/features/Episodes/EpisodeGrid'
+import { Hero } from '@/features/Hero/Hero'
+
+const Home = () => {
   return (
     <main>
       <Hero />
@@ -13,3 +14,5 @@ export default function Home() {
     </main>
   )
 }
+
+export default Home

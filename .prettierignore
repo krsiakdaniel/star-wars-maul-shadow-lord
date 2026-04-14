@@ -19,6 +19,7 @@ coverage/
 dist/
 build/
 _site/
+.next/
 
 # Ignore all HTML files:
 *.html
