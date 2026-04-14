@@ -1,0 +1,32 @@
+# editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*~
+
+# dependencies
+node_modules/
+.npm/
+.pnp/
+.pnp.js
+pnpm-lock.yaml
+
+# testing
+coverage/
+
+# production
+dist/
+build/
+_site/
+
+# Ignore all HTML files:
+*.html
+
+# PWA
+
+public/sw.js
+public/workbox-7144475a.js
+
+# Husky hooks
+.husky/

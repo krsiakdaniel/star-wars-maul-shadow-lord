@@ -1,0 +1,67 @@
+"use client"
+
+import { useEffect } from "react"
+
+import { TEASER_ID } from "@/data/constants"
+import { UI } from "@/texts/ui"
+import { type TrailerModalProps } from "./TrailerModal.types"
+
+export const TrailerModal = ({ open, onClose }: TrailerModalProps) => {
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : ""
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [open])
+
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose()
+    }
+    document.addEventListener("keydown", handleKey)
+    return () => document.removeEventListener("keydown", handleKey)
+  }, [onClose])
+
+  return (
+    <div
+      className="fixed inset-0 z-1000 flex items-center justify-center p-6 transition-opacity duration-300 backdrop-blur-md bg-black/88"
+      style={{
+        opacity: open ? 1 : 0,
+        pointerEvents: open ? "all" : "none",
+      }}
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose()
+      }}
+    >
+      <div
+        className="relative w-full rounded-lg overflow-hidden bg-black shadow-2xl"
+        style={{
+          maxWidth: "960px",
+          transform: open ? "scale(1) translateY(0)" : "scale(0.95) translateY(20px)",
+          transition: "transform 0.3s ease",
+          boxShadow: "0 32px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06)",
+        }}
+      >
+        <button
+          className="absolute top-3.5 right-3.5 z-10 flex items-center justify-center w-8 h-8 rounded-full border border-white/10 text-zinc-400 text-base bg-black/60 transition-colors hover:bg-white/15 hover:text-white cursor-pointer"
+          onClick={onClose}
+          aria-label={UI.trailer.ariaClose}
+        >
+          ✕
+        </button>
+        <div className="relative" style={{ aspectRatio: "16/9" }}>
+          {open && (
+            <iframe
+              src={`https://www.youtube.com/embed/${TEASER_ID}?autoplay=1&rel=0`}
+              className="absolute inset-0 w-full h-full border-none"
+              allowFullScreen
+              allow="autoplay"
+              title={UI.trailer.iframeTitle}
+            />
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+

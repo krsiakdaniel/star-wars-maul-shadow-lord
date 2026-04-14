@@ -1,0 +1,33 @@
+{
+  "importOrder": [
+    "^react$",
+    "^next/(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "^@/lib/hooks/(.*)$",
+    "^@/components/(.*)$",
+    "^@/data/(.*)$",
+    "^@/lib/utils/(.*)$",
+    "^@/localization$",
+    "^@/localization/(.*)$",
+    "^@/__tests__/(.*)$",
+    "^@/public/(.*)$",
+    "^@/types/(.*)$",
+    "^@/(.*)$",
+    "^(?!.*\\.(css|scss)$)[./]",
+    "^.+\\.(css|scss)$"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "overrides": [
+    { "files": "*.yml", "options": { "useTabs": false } },
+    { "files": "*.json", "options": { "useTabs": false } },
+    { "files": ".eslintrc", "options": { "useTabs": false } },
+    { "files": ".prettierrc", "options": { "useTabs": false } },
+    { "files": ".stylelintrc", "options": { "useTabs": false } }
+  ],
+  "plugins": ["prettier-plugin-tailwindcss", "@trivago/prettier-plugin-sort-imports"],
+  "printWidth": 100,
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "all"
+}
