@@ -1,4 +1,4 @@
-export type Tab = 'episodes' | 'details'
+export type Tab = 'episodes' | 'posters' | 'details'
 
 export type EpisodeTabsProps = {
   activeTab: Tab

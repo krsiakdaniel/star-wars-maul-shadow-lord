@@ -114,6 +114,7 @@ public/
 - Tailwind CSS v4 utility classes — no arbitrary values without good reason
 - CSS custom properties (design tokens) defined in `globals.css` under `:root`; use `var(--c-*)` names in `style` props when a Tailwind class doesn't exist
 - No inline `style` objects with static values that have a Tailwind equivalent
+- **Never use custom hex color values** — always use Tailwind color utilities (e.g. `text-white`, `text-zinc-500`); only use `style` for colors when no Tailwind utility exists
 - `style={{ fontFamily: "var(--font-cinzel), serif" }}` is acceptable (no Tailwind utility for CSS var fonts)
 
 ### Icons

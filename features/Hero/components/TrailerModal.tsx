@@ -28,7 +28,7 @@ export const TrailerModal = ({ open, onClose }: TrailerModalProps) => {
 
   return (
     <div
-      className="fixed inset-0 z-1000 flex items-center justify-center p-6 transition-opacity duration-300 backdrop-blur-md bg-black/88"
+      className="fixed inset-0 z-1000 flex items-center justify-center p-6 transition-opacity duration-300 backdrop-blur-md bg-black/60"
       style={{
         opacity: open ? 1 : 0,
         pointerEvents: open ? 'all' : 'none',

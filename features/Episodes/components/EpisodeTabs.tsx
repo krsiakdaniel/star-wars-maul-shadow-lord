@@ -8,6 +8,7 @@ import { type EpisodeTabsProps, type Tab } from './EpisodeTabs.types'
 
 const TABS: { id: Tab; label: string }[] = [
   { id: 'episodes', label: UI.episodeGrid.tabEpisodes },
+  { id: 'posters', label: UI.episodeGrid.tabPosters },
   { id: 'details', label: UI.episodeGrid.tabDetails },
 ]
 
@@ -26,18 +27,12 @@ export const EpisodeTabs = ({ activeTab, onTabChange }: EpisodeTabsProps) => {
             onClick={() => onTabChange(tab.id)}
             onMouseEnter={() => setHoveredTab(tab.id)}
             onMouseLeave={() => setHoveredTab(null)}
-            className="relative pb-3 uppercase text-sm font-bold tracking-widest transition-colors cursor-pointer"
-            style={{
-              fontFamily: 'var(--font-cinzel), serif',
-              color: isHighlighted ? '#fff' : '#71717a',
-            }}
+            className={`relative pb-3 select-none uppercase text-[1rem] font-semibold tracking-widest transition-colors cursor-pointer ${isHighlighted ? 'text-white' : 'text-zinc-500'}`}
+            style={{ fontFamily: 'var(--font-cinzel), serif' }}
           >
             {tab.label}
             {isHighlighted && (
-              <span
-                className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full"
-                style={{ backgroundColor: '#fff' }}
-              />
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-white" />
             )}
           </button>
         )

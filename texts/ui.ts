@@ -19,6 +19,7 @@ export const UI = {
     seasonLabel: 'Season 1',
     episodeCount: '10 Episodes · April – May 2026',
     tabEpisodes: 'Episodes',
+    tabPosters: 'Posters',
     tabDetails: 'Details',
   },
   episodeModal: {
