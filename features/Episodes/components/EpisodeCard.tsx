@@ -11,7 +11,7 @@ import { type EpisodeCardProps } from './EpisodeCard.types'
 export const EpisodeCard = ({ episode, index, onClick }: EpisodeCardProps) => {
   return (
     <div
-      className="animate-card-fade-in cursor-pointer relative z-auto rounded-md overflow-hidden group transition-transform duration-200 ease-out hover:scale-[1.04] hover:-translate-y-1 hover:shadow-2xl"
+      className="animate-card-fade-in cursor-pointer relative z-auto rounded-md overflow-hidden group transition-[box-shadow,outline] duration-200 ease-out hover:ring-2 hover:ring-white"
       style={{
         background: 'var(--c-card)',
         animationDelay: `${index * 0.06}s`,
@@ -31,8 +31,7 @@ export const EpisodeCard = ({ episode, index, onClick }: EpisodeCardProps) => {
             src={episode.still}
             alt={episode.title}
             fill
-            className="object-cover transition-[filter] duration-200"
-            style={{ filter: 'brightness(0.85) saturate(0.9)' }}
+            className="object-cover"
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
             priority={index < 3}
           />
@@ -43,22 +42,12 @@ export const EpisodeCard = ({ episode, index, onClick }: EpisodeCardProps) => {
             src={EPISODE_PLACEHOLDER}
             alt={episode.title}
             fill
-            className="object-cover transition-[filter] duration-200"
-            style={{ filter: 'brightness(0.85) saturate(0.9)' }}
+            className="object-cover"
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
             priority={index < 3}
           />
         </div>
       )}
-
-      {/* hover overlay */}
-      <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-        style={{
-          background:
-            'linear-gradient(to top, rgba(10,10,15,0.9) 0%, rgba(10,10,15,0.2) 60%, transparent 100%)',
-        }}
-      />
 
       {/* play button */}
       <div

@@ -6,8 +6,8 @@ import { AboutCard } from './AboutCard'
 
 export const CastCard = () => {
   const rows = CAST.map((item) => ({
-    left: item.name,
-    right: item.character,
+    left: item.character,
+    right: item.name,
   }))
 
   return <AboutCard title={UI.aboutSection.castTitle} rows={rows} />

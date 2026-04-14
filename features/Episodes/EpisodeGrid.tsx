@@ -61,10 +61,30 @@ export const EpisodeGrid = () => {
 
         {/* Details tab */}
         {activeTab === 'details' && (
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-12">
-            <CastCard />
-            <ShowDetailsCard />
-          </div>
+          <>
+            <div className="flex items-baseline justify-between mb-7">
+              <span
+                className="uppercase text-white"
+                style={{
+                  fontFamily: 'var(--font-cinzel), serif',
+                  fontSize: '0.8125rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.25em',
+                }}
+              >
+                {UI.episodeGrid.seasonLabel}
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+              <div className="animate-card-fade-in" style={{ animationDelay: '0s' }}>
+                <CastCard />
+              </div>
+              <div className="animate-card-fade-in" style={{ animationDelay: '0.06s' }}>
+                <ShowDetailsCard />
+              </div>
+            </div>
+          </>
         )}
       </section>
 
