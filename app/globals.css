@@ -12,6 +12,7 @@
   /* Card surfaces */
   --c-card: #16121a; /* episode card background  */
   --c-modal: #14101a; /* modal panel background   */
+  --c-footer: #0e0b14; /* footer background        */
 
   /* Text scale */
   --c-text-secondary: theme(colors.stone.300); /* #d6d3d1 — cast names      */
@@ -52,6 +53,22 @@ body {
 ::selection {
   background: var(--c-sith-dark);
   color: #fff;
+}
+
+/* Scrollbar — global */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--c-sith);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-sith-dark);
 }
 
 /* Scrollbar */

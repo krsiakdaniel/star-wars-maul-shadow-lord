@@ -8,8 +8,3 @@ const TEASER_ID = 'oonACDq89BY'
 export const TEASER_EMBED_URL = `https://www.youtube.com/embed/${TEASER_ID}?autoplay=1&rel=0`
 
 export const EPISODE_PLACEHOLDER = '/images/episodes/episode-preview.webp'
-
-export const POSTERS: string[] = [
-  '/images/posters/poster-1-1000-1500.webp',
-  '/images/posters/poster-2-1000-1500.webp',
-]

@@ -17,11 +17,11 @@ export const Hero = () => {
   return (
     <>
       {/* HERO */}
-      <div className="relative flex items-end overflow-hidden min-h-200">
+      <div className="relative flex items-end overflow-hidden min-h-120 sm:min-h-150 md:min-h-180 xl:min-h-210">
         <HeroBanner />
 
         {/* content */}
-        <div className="relative z-10 animate-hero-fade-up px-8 pb-14 md:pb-18 md:px-16 max-w-[620px]">
+        <div className="relative z-10 animate-hero-fade-up px-8 pb-14 md:pb-18 md:px-16 max-w-155">
           <p className="sr-only">{UI.hero.eyebrow}</p>
 
           {/* SEO-only heading — visually hidden, logo image shown instead */}
@@ -33,8 +33,9 @@ export const Hero = () => {
             src="/images/logo/logo-maul-shadow-lord.webp"
             alt={`${UI.hero.eyebrow} ${UI.hero.title}: ${UI.hero.subtitle}`}
             width={400}
-            height={150}
-            className="mb-8"
+            height={179}
+            className="mb-8 w-[200px] sm:w-[280px] md:w-[400px] h-auto"
+            style={{ height: 'auto' }}
             priority
           />
 

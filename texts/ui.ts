@@ -1,4 +1,7 @@
 export const UI = {
+  tabs: {
+    ariaLabel: 'Content tabs',
+  },
   hero: {
     eyebrow: 'Star Wars',
     title: 'Maul',
@@ -8,7 +11,7 @@ export const UI = {
     pillSeason: '2026 · 1 Season',
     pillRating: '100% Rotten Tomatoes',
     pillGenre: 'Action, Adventure, Animation',
-    playOnDisney: 'Play on Disney+',
+    visitDisney: 'Visit Disney+',
     teaserTrailer: 'Teaser Trailer',
   },
   trailer: {
@@ -20,9 +23,12 @@ export const UI = {
     episodeCount: '10 Episodes · April – May 2026',
     tabEpisodes: 'Episodes',
     tabPosters: 'Posters',
+    tabGallery: 'Gallery',
     tabDetails: 'Details',
     posterAriaLabel: 'View poster',
     posterAlt: 'Poster',
+    galleryAriaLabel: 'View image',
+    galleryAlt: 'Gallery image',
   },
   episodeModal: {
     teaserTrailer: 'Teaser Trailer',
@@ -36,7 +42,7 @@ export const UI = {
     metaSeason: 'Season',
     metaSeasonValue: '1 · Disney+',
   },
-  aboutSection: {
+  detailsSection: {
     castTitle: 'Voice Cast',
     detailsTitle: 'Show Details',
   },

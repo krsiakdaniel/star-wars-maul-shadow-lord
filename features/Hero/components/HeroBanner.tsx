@@ -1,19 +1,20 @@
 export const HeroBanner = () => {
   return (
     <>
-      {/* background — no filter/transform so background-attachment:fixed works */}
+      {/* background */}
       <div
+        aria-hidden="true"
         className="absolute inset-0"
         style={{
-          backgroundImage: `url('/images/background/background-darth-maul-1.webp')`,
+          backgroundImage: `url('/images/background/background-darth-maul.webp')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center 20%',
-          backgroundAttachment: 'fixed',
         }}
       />
 
       {/* gentle gradient overlay */}
       <div
+        aria-hidden="true"
         className="absolute inset-0"
         style={{
           background:

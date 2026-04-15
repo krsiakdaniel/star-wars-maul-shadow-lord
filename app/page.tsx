@@ -1,13 +1,13 @@
 import { Footer } from '@/components/Footer'
+import { MainContent } from '@/components/MainContent'
 
-import { EpisodeGrid } from '@/features/Episodes/EpisodeGrid'
 import { Hero } from '@/features/Hero/Hero'
 
 const Home = () => {
   return (
     <main>
       <Hero />
-      <EpisodeGrid />
+      <MainContent />
       <Footer />
     </main>
   )

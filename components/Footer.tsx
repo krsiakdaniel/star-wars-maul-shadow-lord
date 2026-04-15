@@ -4,7 +4,7 @@ import { UI } from '@/texts/ui'
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-wrap justify-between items-center gap-4 px-8 py-6 md:px-16 md:py-8 border-t border-white/5 bg-zinc-950">
+    <footer className="flex flex-wrap justify-between items-center gap-4 px-8 py-6 md:px-16 md:py-8 border-t border-white/5 bg-(--c-footer)">
       <span className="text-zinc-500 text-xs">
         {UI.footer.madeBy}{' '}
         <a
@@ -19,7 +19,7 @@ export const Footer = () => {
       <Image
         src="/images/logo/logo-disney.webp"
         alt={UI.footer.disneyAlt}
-        width={40}
+        width={73}
         height={40}
         className="opacity-40"
       />

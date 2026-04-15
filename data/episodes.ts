@@ -1,8 +1,8 @@
-import { Episode } from '@/types/episode'
+import { Episode } from '@/features/SectionEpisodes/Episode.types'
 
 export const EPISODES: Episode[] = [
   {
-    num: 1,
+    order: 1,
     chapter: 'Chapter 1',
     title: 'The Dark Revenge',
     date: 'April 6, 2026',
@@ -13,7 +13,7 @@ export const EPISODES: Episode[] = [
     imdbId: 'tt36594354',
   },
   {
-    num: 2,
+    order: 2,
     chapter: 'Chapter 2',
     title: 'Sinister Schemes',
     date: 'April 6, 2026',
@@ -24,18 +24,18 @@ export const EPISODES: Episode[] = [
     imdbId: 'tt39389414',
   },
   {
-    num: 3,
+    order: 3,
     chapter: 'Chapter 3',
     title: 'Whispers in the Unknown',
     date: 'April 13, 2026',
     runtime: '29 min',
     overview:
-      "Devon Izara and her Jedi master Eeko-Dio-Daki are forced out of hiding when the Empire's Inquisitors arrive on Janix, drawn by a disturbance in the Force.",
+      "As Maul's plans come together and the syndicate war reaches a boiling point, Devon finds herself at a crossroads — caught between loyalty to her master and a growing unease she can no longer ignore.",
     still: '/images/episodes/episode-3-thumb.webp',
     imdbId: 'tt39389418',
   },
   {
-    num: 4,
+    order: 4,
     chapter: 'Chapter 4',
     title: 'Pride and Vengeance',
     date: 'April 13, 2026',
@@ -46,7 +46,7 @@ export const EPISODES: Episode[] = [
     imdbId: 'tt39389420',
   },
   {
-    num: 5,
+    order: 5,
     chapter: 'Chapter 5',
     title: 'Inquisition',
     date: 'April 20, 2026',
@@ -57,7 +57,7 @@ export const EPISODES: Episode[] = [
     imdbId: 'tt39389425',
   },
   {
-    num: 6,
+    order: 6,
     chapter: 'Chapter 6',
     title: 'Night of the Hunted',
     date: 'April 20, 2026',
@@ -68,7 +68,7 @@ export const EPISODES: Episode[] = [
     imdbId: 'tt39389436',
   },
   {
-    num: 7,
+    order: 7,
     chapter: 'Chapter 7',
     title: 'Call to Oblivion',
     date: 'April 27, 2026',
@@ -79,7 +79,7 @@ export const EPISODES: Episode[] = [
     imdbId: 'tt39389465',
   },
   {
-    num: 8,
+    order: 8,
     chapter: 'Chapter 8',
     title: 'The Creeping Fear',
     date: 'April 27, 2026',
@@ -90,7 +90,7 @@ export const EPISODES: Episode[] = [
     imdbId: 'tt39389472',
   },
   {
-    num: 9,
+    order: 9,
     chapter: 'Chapter 9',
     title: 'Strange Allies',
     date: 'May 4, 2026',
@@ -101,7 +101,7 @@ export const EPISODES: Episode[] = [
     imdbId: 'tt39389479',
   },
   {
-    num: 10,
+    order: 10,
     chapter: 'Chapter 10',
     title: 'Finale',
     date: 'May 4, 2026',

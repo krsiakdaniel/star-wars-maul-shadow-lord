@@ -8,9 +8,9 @@ export const ButtonTeaserTrailer = ({ onClick }: ButtonTeaserTrailerProps) => {
   return (
     <button
       onClick={onClick}
-      className="inline-flex items-center gap-2 px-4 py-2 text-sm text-white font-medium rounded border border-white/20 bg-white/12 hover:bg-white/20 transition-colors cursor-pointer select-none"
+      className="inline-flex min-w-40 justify-center items-center gap-2 px-4 py-2 text-sm text-white font-medium rounded bg-zinc-700 hover:bg-zinc-600 transition-colors cursor-pointer select-none"
     >
-      <Play size={16} fill="currentColor" />
+      <Play size={16} fill="currentColor" aria-hidden="true" />
       {UI.hero.teaserTrailer}
     </button>
   )

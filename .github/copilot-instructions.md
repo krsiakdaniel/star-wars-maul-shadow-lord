@@ -21,16 +21,32 @@ Fan site for the Star Wars animated show **Maul: Shadow Lord** (Disney+, 2026).
 
 ```
 app/                      # Next.js App Router
-  layout.tsx              # fonts (Cinzel, Inter), metadata, favicon
-  page.tsx                # root page — composes Hero, EpisodeGrid, AboutSection, Footer
+  layout.tsx              # fonts (Cinzel, Inter), metadata export, favicon
+  manifest.ts             # PWA web app manifest (name, icons, theme color)
+  metadata.ts             # SEO metadata (Metadata object — OG, Twitter, keywords)
+  page.tsx                # root page — composes Hero, MainContent, Footer
   globals.css             # design tokens (CSS vars), keyframe animations
-components/
-  Footer.tsx              # standalone, not feature-worthy
+components/               # generic, reusable UI — no domain logic
+  ButtonIMDB.tsx
+  ButtonIMDB.types.ts
+  ButtonPlayOnDisney.tsx
+  ButtonPlayOnDisney.types.ts
+  ButtonTeaserTrailer.tsx
+  ButtonTeaserTrailer.types.ts
+  Footer.tsx
+  ImageLightboxGrid.tsx   # lightbox grid via yet-another-react-lightbox
+  ImageLightboxGrid.types.ts
+  MainContent.tsx         # "use client", tab orchestrator — wires Tabs to features
+  SectionHeader.tsx
+  Tabs.tsx                # "use client", tab bar UI (episodes/images/posters/details)
+  Tabs.types.ts
 data/
   constants.ts            # all URL/ID constants (DISNEY_SHOW, IMDB_*, TEASER_*, EPISODE_PLACEHOLDER)
   episodes.ts             # EPISODES array
-  about.ts                # CAST, SHOW_DETAILS arrays
-features/
+  details.ts              # CAST, SHOW_DETAILS arrays
+  posters.ts              # POSTERS array
+  gallery.ts              # GALLERY array
+features/                 # self-contained domain areas; root file is the public API
   Hero/
     Hero.tsx              # "use client", orchestrator
     components/
@@ -38,40 +54,40 @@ features/
       HeroPills.tsx       # badge pills (New Series, rating, season)
       HeroActions.tsx     # Disney+ link + Teaser Trailer button
       HeroActions.types.ts
-      PlayIcon.tsx        # CSS border-triangle (legacy, prefer lucide Play)
-      PlayIcon.types.ts
       TrailerModal.tsx    # "use client", fullscreen YouTube iframe modal
       TrailerModal.types.ts
-  Episodes/
-    EpisodeGrid.tsx       # "use client", grid + selectedEpisode state
-    EpisodeModal.tsx      # "use client", orchestrator modal
-    EpisodeModal.types.ts
+  SectionDetails/
+    Details.types.ts      # CastMember, ShowDetail interfaces
+    SectionDetails.tsx    # server component, grid wrapper
+    components/
+      DetailsCard.tsx     # cast / show metadata card
+      DetailsCard.types.ts
+  SectionEpisodes/
+    Episode.types.ts      # Episode interface
+    SectionEpisodes.tsx   # "use client", grid + selectedEpisode state
     components/
       EpisodeCard.tsx     # "use client", thumbnail card
       EpisodeCard.types.ts
-      EpisodeModalStill.tsx   # still image + info overlay
-      EpisodeModalStill.types.ts
-      EpisodeModalTrailer.tsx # YouTube iframe
-      EpisodeModalActions.tsx # Disney+, Teaser, IMDb buttons
+      EpisodeModal.tsx    # "use client", orchestrator modal
+      EpisodeModal.types.ts
+      EpisodeModalActions.tsx  # Disney+, Teaser, IMDb buttons
       EpisodeModalActions.types.ts
-      SmallPlayIcon.tsx   # CSS border-triangle (legacy, prefer lucide Play)
-      SmallPlayIcon.types.ts
-  About/
-    AboutSection.tsx      # server component, grid wrapper
-    components/
-      CastCard.tsx        # voice cast list
-      ShowDetailsCard.tsx # show metadata list
+      EpisodeModalStill.tsx    # still image + info overlay
+      EpisodeModalStill.types.ts
+      EpisodeModalTrailer.tsx  # YouTube iframe
+  SectionGallery/
+    SectionGallery.tsx    # gallery lightbox grid
+  SectionPosters/
+    SectionPosters.tsx    # posters lightbox grid
 texts/
   ui.ts                   # ALL user-visible strings — UI object
-types/
-  episode.ts              # Episode interface
-  about.ts                # CastMember, ShowDetail interfaces
 public/
   images/
-    episodes/             # episode-1-thumb.webp … episode-4-thumb.webp
-    logo/                 # disney-logo.png
-    darth-maul-background.webp   # hero section background
-    darth-maul-preview.webp      # placeholder for un-aired episodes (5–10)
+    background/           # hero background image
+    episodes/             # episode-N-thumb.webp (1–4); episodes 5–10 use EPISODE_PLACEHOLDER
+    gallery/              # gallery stills
+    logo/                 # disney-logo.webp
+    posters/              # poster images
 ```
 
 ---
@@ -92,12 +108,22 @@ public/
 - One component per file; filename = component name (PascalCase)
 - Props type imported from the companion `.types.ts` file in the same directory
 
+### Components vs Features
+
+- **`components/`** — generic, reusable UI with no domain/business logic. Shared across features. Includes shared buttons, layout primitives, and composition orchestrators like `MainContent`.
+- **`features/`** — self-contained domain areas. Each has a root file (public API) and a `components/` subfolder for private sub-components.
+- `app/page.tsx` imports **only** from `components/` or feature root files — never from `features/*/components/*` directly.
+
 ### Feature structure
 
 - Each feature lives under `features/FeatureName/`
 - Sub-components go in `features/FeatureName/components/`
-- The feature root file (`Hero.tsx`, `EpisodeGrid.tsx`, etc.) is the public API — `app/page.tsx` imports only from here
+- The feature root file (e.g. `SectionEpisodes.tsx`) is the public API — `app/page.tsx` imports only from here
 - `@/` alias resolves to the project root
+
+### Keeping Project Structure up to date
+
+**Whenever files or folders are added, moved, renamed, or deleted**, update the `## Project Structure` section in `.github/copilot-instructions.md` to reflect the change before finishing the task. This is a required step — not optional.
 
 ### Import order (enforced by Prettier plugin)
 
@@ -132,7 +158,7 @@ public/
 
 - All URLs and IDs live in `data/constants.ts`
 - Episode data lives in `data/episodes.ts` as the `EPISODES` array
-- Cast / show details live in `data/about.ts`
+- Cast / show details live in `data/details.ts`
 
 ---
 

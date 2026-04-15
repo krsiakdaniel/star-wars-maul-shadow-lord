@@ -1,26 +1,12 @@
-import { Cinzel, Inter } from 'next/font/google'
-
 import type { Metadata } from 'next'
+
+import { siteMetadata } from '@/app/metadata'
+
+import { cinzel, inter } from './fonts'
 
 import './globals.css'
 
-const cinzel = Cinzel({
-  variable: '--font-cinzel',
-  subsets: ['latin'],
-  weight: ['400', '600', '900'],
-})
-
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-})
-
-export const metadata: Metadata = {
-  title: 'Star Wars: Maul – Shadow Lord',
-  description:
-    'After the Clone Wars, a former Sith lord plots to rebuild his criminal empire on Janix — a planet untouched by the Empire.',
-}
+export const metadata: Metadata = siteMetadata
 
 const RootLayout = ({
   children,
