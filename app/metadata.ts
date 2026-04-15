@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const siteMetadata: Metadata = {
-  metadataBase: new URL('https://maul-shadow-lord.vercel.app'),
+  metadataBase: new URL('https://star-wars-maul-shadow-lord.vercel.app'),
   title: {
     default: 'Star Wars: Maul – Shadow Lord',
     template: '%s | Star Wars: Maul – Shadow Lord',
@@ -32,9 +32,9 @@ export const siteMetadata: Metadata = {
       'After the Clone Wars, a former Sith lord plots to rebuild his criminal empire on Janix — a planet untouched by the Empire. A Disney+ Original Series.',
     images: [
       {
-        url: '/images/background/background-darth-maul.webp',
-        width: 1920,
-        height: 1080,
+        url: '/images/open-graph/og.webp',
+        width: 1280,
+        height: 720,
         alt: 'Maul – Shadow Lord',
       },
     ],
@@ -46,7 +46,7 @@ export const siteMetadata: Metadata = {
     title: 'Star Wars: Maul – Shadow Lord',
     description:
       'After the Clone Wars, a former Sith lord plots to rebuild his criminal empire on Janix — a planet untouched by the Empire. A Disney+ Original Series.',
-    images: ['/images/background/background-darth-maul.webp'],
+    images: ['/images/open-graph/og.webp'],
   },
   icons: {
     icon: '/favicon.png',
