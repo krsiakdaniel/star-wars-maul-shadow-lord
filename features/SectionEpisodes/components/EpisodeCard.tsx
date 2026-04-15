@@ -47,13 +47,11 @@ export const EpisodeCard = ({ episode, index, onClick }: EpisodeCardProps) => {
 
       {/* info */}
       <div className="px-1 pt-2 pb-4">
-        <p className="mb-1 uppercase text-orange-500 text-[0.625rem] font-semibold tracking-widest">
-          {episode.chapter}
-        </p>
-        <p className="mb-1 overflow-hidden text-ellipsis whitespace-nowrap text-stone-200 text-[0.8125rem] leading-[1.3]">
+        <p className="mb-1 uppercase text-orange-500 text-xs tracking-widest">{episode.chapter}</p>
+        <p className="mb-1 overflow-hidden text-ellipsis whitespace-nowrap text-stone-200 text-sm font-bold leading-[1.3]">
           {episode.title}
         </p>
-        <p className="text-zinc-400 text-[0.6875rem]">
+        <p className="text-zinc-400 text-xs">
           {episode.date}
           {episode.runtime && (
             <>

@@ -59,7 +59,7 @@ export const Hero = () => {
           </div>
 
           {/* description */}
-          <p className="animate-hero-item animate-hero-item-3 mb-8 text-stone-200/75 text-sm font-light leading-[1.75] max-w-[500px]">
+          <p className="animate-hero-item animate-hero-item-3 mb-8 text-stone-200/90 text-sm font-normal leading-[1.75] max-w-[500px]">
             {UI.hero.description}
           </p>
 

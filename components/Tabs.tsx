@@ -47,7 +47,7 @@ export const Tabs = ({ activeTab, onTabChange }: TabsProps) => {
             onClick={() => onTabChange(tab.id)}
             onMouseEnter={() => setHoveredTab(tab.id)}
             onMouseLeave={() => setHoveredTab(null)}
-            className={`pb-4 shrink-0 select-none uppercase text-sm sm:text-[1rem] font-semibold tracking-wider sm:tracking-widest transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:rounded-sm ${isHighlighted ? 'text-white' : 'text-zinc-400'}`}
+            className={`pb-4 shrink-0 select-none uppercase text-sm sm:text-base font-semibold tracking-wider sm:tracking-widest transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:rounded-sm ${isHighlighted ? 'text-white' : 'text-zinc-400'}`}
           >
             {tab.label}
           </button>

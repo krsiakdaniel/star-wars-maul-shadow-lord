@@ -39,7 +39,7 @@ export const EpisodeModalStill = ({ episode }: EpisodeModalStillProps) => {
       />
       {/* info overlay */}
       <div className="absolute bottom-4 left-4 right-16 sm:bottom-6 sm:left-8 sm:right-20">
-        <p className="mb-2 uppercase text-orange-500 text-[0.6875rem] font-semibold tracking-[0.2em]">
+        <p className="mb-2 uppercase text-orange-500 text-xs font-semibold tracking-[0.2em]">
           {episode.chapter}
           {UI.srOnly.separator}
           {UI.episodeGrid.seasonLabel}
