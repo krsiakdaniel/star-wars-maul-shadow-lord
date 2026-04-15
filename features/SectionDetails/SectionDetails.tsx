@@ -20,7 +20,7 @@ export const SectionDetails = () => {
       <div className="animate-card-fade-in">
         <DetailsCard title={UI.detailsSection.castTitle} rows={castRows} />
       </div>
-      <div className="animate-card-fade-in">
+      <div className="animate-card-fade-in" style={{ animationDelay: '0.06s' }}>
         <DetailsCard title={UI.detailsSection.detailsTitle} rows={detailRows} />
       </div>
     </div>

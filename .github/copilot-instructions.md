@@ -29,8 +29,7 @@ app/                      # Next.js App Router
 components/               # generic, reusable UI — no domain logic
   ButtonIMDB.tsx
   ButtonIMDB.types.ts
-  ButtonPlayOnDisney.tsx
-  ButtonPlayOnDisney.types.ts
+  ButtonDisney.tsx
   ButtonTeaserTrailer.tsx
   ButtonTeaserTrailer.types.ts
   Footer.tsx

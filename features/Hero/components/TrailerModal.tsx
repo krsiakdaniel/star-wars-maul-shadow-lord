@@ -10,8 +10,12 @@ import { UI } from '@/texts/ui'
 
 import { type TrailerModalProps } from './TrailerModal.types'
 
+const FOCUSABLE =
+  'button:not([disabled]), [href], input, select, textarea, iframe, [tabindex]:not([tabindex="-1"])'
+
 export const TrailerModal = ({ open, onClose }: TrailerModalProps) => {
   const closeButtonRef = useRef<HTMLButtonElement>(null)
+  const dialogRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (open) closeButtonRef.current?.focus()
@@ -25,12 +29,30 @@ export const TrailerModal = ({ open, onClose }: TrailerModalProps) => {
   }, [open])
 
   useEffect(() => {
+    if (!open) return
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose()
+      if (e.key === 'Escape') {
+        onClose()
+        return
+      }
+      if (e.key !== 'Tab') return
+      const dialog = dialogRef.current
+      if (!dialog) return
+      const focusable = Array.from(dialog.querySelectorAll<HTMLElement>(FOCUSABLE))
+      if (focusable.length === 0) return
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault()
+        first.focus()
+      }
     }
     document.addEventListener('keydown', handleKey)
     return () => document.removeEventListener('keydown', handleKey)
-  }, [onClose])
+  }, [open, onClose])
 
   return (
     <div
@@ -45,10 +67,11 @@ export const TrailerModal = ({ open, onClose }: TrailerModalProps) => {
       }}
     >
       <div
+        ref={dialogRef}
         role="dialog"
         aria-modal="true"
         aria-label={UI.trailer.iframeTitle}
-        className="relative w-full rounded-lg overflow-hidden bg-black shadow-2xl max-w-240"
+        className="relative w-full rounded-md overflow-hidden bg-black shadow-2xl max-w-215"
         style={{
           transform: open ? 'scale(1) translateY(0)' : 'scale(0.95) translateY(20px)',
           transition: 'transform 0.3s ease',
@@ -57,7 +80,7 @@ export const TrailerModal = ({ open, onClose }: TrailerModalProps) => {
       >
         <button
           ref={closeButtonRef}
-          className="absolute top-2 right-2 z-10 flex items-center justify-center w-8 h-8 rounded-full border border-white/10 text-zinc-400 text-base bg-black/60 transition-colors hover:bg-white/15 hover:text-white cursor-pointer"
+          className="absolute top-2 right-2 z-10 flex items-center justify-center w-8 h-8 rounded-md border border-white/10 text-zinc-400 text-base bg-black/60 transition-colors hover:bg-white/15 hover:text-white cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           onClick={onClose}
           aria-label={UI.trailer.ariaClose}
         >

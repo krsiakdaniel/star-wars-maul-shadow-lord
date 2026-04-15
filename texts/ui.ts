@@ -46,6 +46,10 @@ export const UI = {
     castTitle: 'Voice Cast',
     detailsTitle: 'Show Details',
   },
+  srOnly: {
+    newTab: '(opens in new tab)',
+    separator: ' · ',
+  },
   footer: {
     disneyAlt: 'Disney+',
     madeBy: 'Made by',

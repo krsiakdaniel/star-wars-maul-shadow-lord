@@ -13,10 +13,24 @@ import { EpisodeModalActions } from './EpisodeModalActions'
 import { EpisodeModalStill } from './EpisodeModalStill'
 import { EpisodeModalTrailer } from './EpisodeModalTrailer'
 
+const FOCUSABLE =
+  'button:not([disabled]), [href], input, select, textarea, iframe, [tabindex]:not([tabindex="-1"])'
+
 export const EpisodeModal = ({ episode, onClose }: EpisodeModalProps) => {
   const closeButtonRef = useRef<HTMLButtonElement>(null)
+  const dialogRef = useRef<HTMLDivElement>(null)
   const [showTrailer, setShowTrailer] = useState(false)
+  const [visible, setVisible] = useState(false)
   const open = episode !== null
+
+  useEffect(() => {
+    if (open) {
+      const raf = requestAnimationFrame(() => setVisible(true))
+      return () => cancelAnimationFrame(raf)
+    } else {
+      setVisible(false)
+    }
+  }, [open])
 
   useEffect(() => {
     if (open) closeButtonRef.current?.focus()
@@ -30,12 +44,30 @@ export const EpisodeModal = ({ episode, onClose }: EpisodeModalProps) => {
   }, [open])
 
   useEffect(() => {
+    if (!open) return
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose()
+      if (e.key === 'Escape') {
+        onClose()
+        return
+      }
+      if (e.key !== 'Tab') return
+      const dialog = dialogRef.current
+      if (!dialog) return
+      const focusable = Array.from(dialog.querySelectorAll<HTMLElement>(FOCUSABLE))
+      if (focusable.length === 0) return
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault()
+        first.focus()
+      }
     }
     document.addEventListener('keydown', handleKey)
     return () => document.removeEventListener('keydown', handleKey)
-  }, [onClose])
+  }, [open, onClose])
 
   const epNum = episode ? String(episode.order).padStart(2, '0') : ''
   const imdbHref = episode?.imdbId ? `${IMDB_BASE}${episode.imdbId}/` : IMDB_SHOW
@@ -43,7 +75,7 @@ export const EpisodeModal = ({ episode, onClose }: EpisodeModalProps) => {
   return (
     <div
       inert={!open}
-      className="fixed inset-0 z-1000 flex items-start justify-center overflow-y-auto py-6 px-4 sm:px-6 transition-opacity duration-300 backdrop-blur-md bg-black/60"
+      className="fixed inset-0 z-1000 flex items-center justify-center p-6 transition-opacity duration-300 backdrop-blur-md bg-black/60"
       style={{
         opacity: open ? 1 : 0,
         pointerEvents: open ? 'all' : 'none',
@@ -53,14 +85,15 @@ export const EpisodeModal = ({ episode, onClose }: EpisodeModalProps) => {
       }}
     >
       <div
+        ref={dialogRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby="episode-modal-title"
         aria-describedby="episode-modal-description"
-        className="relative w-full my-auto rounded-lg overflow-hidden max-w-215"
+        className="relative w-full rounded-md overflow-hidden overflow-y-auto max-h-[90dvh] modal-scroll max-w-215"
         style={{
           background: 'var(--c-modal)',
-          transform: open ? 'scale(1) translateY(0)' : 'scale(0.95) translateY(20px)',
+          transform: visible ? 'scale(1) translateY(0)' : 'scale(0.95) translateY(20px)',
           transition: 'transform 0.3s ease',
           boxShadow: '0 32px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06)',
         }}
@@ -68,7 +101,7 @@ export const EpisodeModal = ({ episode, onClose }: EpisodeModalProps) => {
         {/* close */}
         <button
           ref={closeButtonRef}
-          className="absolute top-2 right-2 z-10 flex items-center justify-center w-8 h-8 rounded-full border border-white/10 text-zinc-400 text-base bg-black/60 transition-colors hover:bg-white/15 hover:text-white cursor-pointer"
+          className="absolute top-2 right-2 z-10 flex items-center justify-center w-8 h-8 rounded-md border border-white/10 text-zinc-400 text-base bg-black/60 transition-colors hover:bg-white/15 hover:text-white cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           onClick={onClose}
           aria-label={UI.episodeModal.ariaClose}
         >

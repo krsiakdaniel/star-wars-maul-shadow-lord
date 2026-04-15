@@ -8,12 +8,13 @@ import { type EpisodeModalStillProps } from './EpisodeModalStill.types'
 
 export const EpisodeModalStill = ({ episode }: EpisodeModalStillProps) => {
   return (
-    <div className="relative rounded-t-lg overflow-hidden bg-black aspect-video">
+    <div className="relative rounded-t-lg overflow-hidden bg-zinc-900 aspect-video">
       {episode.still ? (
         <Image
           src={episode.still}
           alt={episode.title}
           fill
+          sizes="(max-width: 768px) 100vw, 800px"
           className="object-cover"
           style={{ filter: 'brightness(0.7) saturate(0.9)' }}
         />
@@ -22,6 +23,7 @@ export const EpisodeModalStill = ({ episode }: EpisodeModalStillProps) => {
           src={EPISODE_PLACEHOLDER}
           alt={episode.title}
           fill
+          sizes="(max-width: 768px) 100vw, 800px"
           className="object-cover"
           style={{ filter: 'brightness(0.7) saturate(0.9)' }}
         />
@@ -39,12 +41,12 @@ export const EpisodeModalStill = ({ episode }: EpisodeModalStillProps) => {
       <div className="absolute bottom-4 left-4 right-16 sm:bottom-6 sm:left-8 sm:right-20">
         <p className="mb-2 uppercase text-orange-500 text-[0.6875rem] font-semibold tracking-[0.2em]">
           {episode.chapter}
-          {' \u00b7 '}
+          {UI.srOnly.separator}
           {UI.episodeGrid.seasonLabel}
         </p>
         <h2
           id="episode-modal-title"
-          className="text-white mb-2 text-[clamp(1.25rem,3vw,1.875rem)] font-bold leading-[1.15]"
+          className="text-white text-[clamp(1.25rem,3vw,1.875rem)] font-bold leading-[1.15]"
           style={{ fontFamily: 'var(--font-cinzel), serif' }}
         >
           {episode.title}

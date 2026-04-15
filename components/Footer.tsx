@@ -11,9 +11,10 @@ export const Footer = () => {
           href={UI.footer.domainUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-zinc-300 hover:text-white transition-colors"
+          className="text-zinc-300 hover:text-white transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:shadow-[0_0_24px_4px_rgba(185,28,28,0.45)]"
         >
           {UI.footer.domain}
+          <span className="sr-only">{UI.srOnly.newTab}</span>
         </a>
       </span>
       <Image

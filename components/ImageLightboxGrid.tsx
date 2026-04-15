@@ -26,7 +26,7 @@ export const ImageLightboxGrid = ({
         {items.map((src, index) => (
           <div
             key={src}
-            className={`animate-card-fade-in group relative overflow-hidden rounded-md transition-shadow duration-200 ease-out hover:ring-4 hover:ring-white cursor-pointer ${cardClassName}`}
+            className={`animate-card-fade-in group relative overflow-hidden rounded-md transition-all duration-200 ease-out ring-offset-2 ring-offset-black hover:ring-3 hover:ring-red-700 hover:shadow-[0_0_24px_4px_rgba(185,28,28,0.45)] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-red-700 focus-visible:shadow-[0_0_24px_4px_rgba(185,28,28,0.45)] cursor-pointer ${cardClassName}`}
             style={{ animationDelay: `${index * 0.06}s` }}
             onClick={() => setLightboxIndex(index)}
             role="button"

@@ -2,7 +2,7 @@ import { type DetailsCardProps } from './DetailsCard.types'
 
 export const DetailsCard = ({ title, rows }: DetailsCardProps) => {
   return (
-    <div className="bg-white/3 border border-white/6 rounded-lg p-8">
+    <div className="bg-white/3 border border-white/6 rounded-md p-8">
       <p
         className="text-[0.625rem] font-semibold tracking-[0.35em] uppercase mb-4 pb-4 border-b border-white/6 text-orange-500"
         style={{ fontFamily: 'var(--font-cinzel), serif' }}
