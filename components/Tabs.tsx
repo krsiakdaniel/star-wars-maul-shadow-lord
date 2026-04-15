@@ -20,7 +20,7 @@ export const Tabs = ({ activeTab, onTabChange }: TabsProps) => {
     <div
       role="tablist"
       aria-label={UI.tabs.ariaLabel}
-      className="flex gap-8 border-b border-white/10 mb-8"
+      className="tabs-scroll flex gap-4 sm:gap-8 overflow-x-auto border-b border-white/10 mb-8"
     >
       {TABS.map((tab) => {
         const isActive = activeTab === tab.id
@@ -36,13 +36,13 @@ export const Tabs = ({ activeTab, onTabChange }: TabsProps) => {
             onClick={() => onTabChange(tab.id)}
             onMouseEnter={() => setHoveredTab(tab.id)}
             onMouseLeave={() => setHoveredTab(null)}
-            className={`relative pb-4 select-none uppercase text-[1rem] font-semibold tracking-widest transition-colors cursor-pointer ${isHighlighted ? 'text-white' : 'text-zinc-500'}`}
+            className={`relative pb-4 shrink-0 select-none uppercase text-sm sm:text-[1rem] font-semibold tracking-wider sm:tracking-widest transition-colors cursor-pointer ${isHighlighted ? 'text-white' : 'text-zinc-500'}`}
           >
             {tab.label}
             {isHighlighted && (
               <span
                 aria-hidden="true"
-                className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-white"
+                className="absolute bottom-0 left-0 right-0 h-0.75 rounded-full bg-white"
               />
             )}
           </button>

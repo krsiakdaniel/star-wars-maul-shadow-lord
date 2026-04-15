@@ -16,12 +16,11 @@ export const Hero = () => {
 
   return (
     <>
-      {/* HERO */}
-      <div className="relative flex items-end overflow-hidden min-h-120 sm:min-h-150 md:min-h-180 xl:min-h-210">
+      <div className="relative flex items-end overflow-hidden">
         <HeroBanner />
 
         {/* content */}
-        <div className="relative z-10 animate-hero-fade-up px-8 pb-14 md:pb-18 md:px-16 max-w-155">
+        <div className="relative z-10 animate-hero-fade-up px-8 pt-16 pb-14 md:px-16 max-w-155">
           <p className="sr-only">{UI.hero.eyebrow}</p>
 
           {/* SEO-only heading — visually hidden, logo image shown instead */}

@@ -50,7 +50,7 @@ export const EpisodeCard = ({ episode, index, onClick }: EpisodeCardProps) => {
         {/* play button */}
         <div
           aria-hidden="true"
-          className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 group-hover:opacity-100 scale-[0.85] group-hover:scale-100 transition-all duration-200 w-11 h-11 border-[1.5px] border-white/70 rounded-full"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 group-hover:opacity-100 scale-[0.85] group-hover:scale-100 transition-all duration-200 w-11 h-11 border-2 border-white/70 rounded-full"
         >
           <Play size={16} fill="white" color="white" className="ml-0.5" />
         </div>
