@@ -78,11 +78,11 @@ export const EpisodeGrid = () => {
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') setLightboxIndex(i)
                   }}
-                  aria-label={`View poster ${i + 1}`}
+                  aria-label={`${UI.episodeGrid.posterAriaLabel} ${i + 1}`}
                 >
                   <Image
                     src={src}
-                    alt={`Poster ${i + 1}`}
+                    alt={`${UI.episodeGrid.posterAlt} ${i + 1}`}
                     fill
                     className="object-cover"
                     sizes="280px"

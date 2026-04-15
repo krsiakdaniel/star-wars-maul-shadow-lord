@@ -66,7 +66,7 @@ export const EpisodeCard = ({ episode, index, onClick }: EpisodeCardProps) => {
           {episode.date}
           {episode.runtime && (
             <>
-              {' · '}
+              {' \u00b7 '}
               {episode.runtime}
             </>
           )}

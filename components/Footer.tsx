@@ -18,7 +18,7 @@ export const Footer = () => {
       </span>
       <Image
         src="/images/logo/logo-disney.webp"
-        alt="Disney+"
+        alt={UI.footer.disneyAlt}
         width={40}
         height={40}
         className="opacity-40"

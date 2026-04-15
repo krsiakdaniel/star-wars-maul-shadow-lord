@@ -84,7 +84,10 @@ export const EpisodeModal = ({ episode, onClose }: EpisodeModalProps) => {
                     {UI.episodeModal.metaEpisode}
                   </p>
                   <p className="text-[0.8125rem] text-zinc-300">
-                    E{epNum} — {episode.title}
+                    {UI.episodeModal.metaEpisodePrefix}
+                    {epNum}
+                    {UI.episodeModal.metaEpisodeSeparator}
+                    {episode.title}
                   </p>
                 </div>
                 <div>

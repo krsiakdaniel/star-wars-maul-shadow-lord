@@ -1,3 +1,5 @@
+import { ExternalLink } from 'lucide-react'
+
 import { UI } from '@/texts/ui'
 
 import { type ButtonIMDBProps } from './ButtonIMDB.types'
@@ -11,6 +13,7 @@ export const ButtonIMDB = ({ href }: ButtonIMDBProps) => {
       className="inline-flex items-center gap-2 px-4 py-2 text-[0.75rem] font-bold rounded no-underline text-black bg-yellow-400 border border-yellow-400 transition-opacity hover:opacity-85 select-none"
     >
       {UI.episodeModal.imdb}
+      <ExternalLink size={12} />
     </a>
   )
 }
