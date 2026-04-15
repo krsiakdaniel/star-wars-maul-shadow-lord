@@ -6,7 +6,7 @@ import { type EpisodeModalActionsProps } from './EpisodeModalActions.types'
 
 export const EpisodeModalActions = ({ imdbHref, onShowTrailer }: EpisodeModalActionsProps) => {
   return (
-    <div className="flex flex-wrap gap-2.5 mb-6">
+    <div className="flex flex-wrap gap-2 mb-6">
       <ButtonPlayOnDisney />
       <ButtonTeaserTrailer onClick={onShowTrailer} />
       <ButtonIMDB href={imdbHref} />

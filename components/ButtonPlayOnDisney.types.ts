@@ -1,3 +1,1 @@
-export type ButtonPlayOnDisneyProps = {
-  variant?: 'hero' | 'modal'
-}
+export type ButtonPlayOnDisneyProps = Record<string, never>

@@ -40,6 +40,9 @@ export const UI = {
   footer: {
     brand: 'Maul',
     brandAccent: 'Shadow Lord',
-    disclaimer: '© Lucasfilm Animation / Disney+. Fan site. Not affiliated with Disney.',
+    madeBy: 'Made by',
+    domain: 'krsiak.cz',
+    domainUrl: 'https://krsiak.cz/',
+    disclaimer: '© Lucasfilm Animation & Disney. This is fan site only.',
   },
 }

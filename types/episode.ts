@@ -7,5 +7,4 @@ export interface Episode {
   overview: string
   still: string | null
   imdbId: string | null
-  rating?: number
 }

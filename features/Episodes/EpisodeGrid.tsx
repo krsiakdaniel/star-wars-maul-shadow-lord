@@ -4,7 +4,6 @@ import { useState } from 'react'
 
 import Image from 'next/image'
 
-import { Download } from 'lucide-react'
 import Lightbox from 'yet-another-react-lightbox'
 
 import { POSTERS } from '@/data/constants'
@@ -31,31 +30,21 @@ export const EpisodeGrid = () => {
 
   return (
     <>
-      <section className="mx-auto px-8 pt-12 pb-20 md:px-16" style={{ maxWidth: '1400px' }}>
+      <section className="px-8 pt-12 pb-20 md:px-16">
         {/* Tab bar */}
         <EpisodeTabs activeTab={activeTab} onTabChange={setActiveTab} />
 
         {/* Episodes tab */}
         {activeTab === 'episodes' && (
           <>
-            <div className="flex items-baseline justify-between mb-7">
-              <span
-                className="uppercase text-white"
-                style={{
-                  fontFamily: 'var(--font-cinzel), serif',
-                  fontSize: '0.8125rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.25em',
-                }}
-              >
+            <div className="flex items-baseline justify-between mb-8">
+              <span className="uppercase text-white text-[0.8125rem] font-semibold tracking-[0.25em]">
                 {UI.episodeGrid.seasonLabel}
               </span>
-              <span className="text-zinc-600" style={{ fontSize: '0.75rem' }}>
-                {UI.episodeGrid.episodeCount}
-              </span>
+              <span className="text-zinc-600 text-xs">{UI.episodeGrid.episodeCount}</span>
             </div>
 
-            <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {EPISODES.map((ep, i) => (
                 <EpisodeCard
                   key={ep.num}
@@ -71,16 +60,8 @@ export const EpisodeGrid = () => {
         {/* Posters tab */}
         {activeTab === 'posters' && (
           <>
-            <div className="flex items-baseline justify-between mb-7">
-              <span
-                className="uppercase text-white"
-                style={{
-                  fontFamily: 'var(--font-cinzel), serif',
-                  fontSize: '0.8125rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.25em',
-                }}
-              >
+            <div className="flex items-baseline justify-between mb-8">
+              <span className="uppercase text-white text-[0.8125rem] font-semibold tracking-[0.25em]">
                 {UI.episodeGrid.seasonLabel}
               </span>
             </div>
@@ -89,8 +70,8 @@ export const EpisodeGrid = () => {
               {POSTERS.map((src, i) => (
                 <div
                   key={src}
-                  className="animate-card-fade-in relative overflow-hidden rounded-md transition-shadow duration-200 ease-out hover:ring-2 hover:ring-white cursor-pointer"
-                  style={{ animationDelay: `${i * 0.06}s`, width: '280px', aspectRatio: '2/3' }}
+                  className="animate-card-fade-in relative overflow-hidden rounded-md transition-shadow duration-200 ease-out hover:ring-2 hover:ring-white cursor-pointer w-[280px] aspect-[2/3]"
+                  style={{ animationDelay: `${i * 0.06}s` }}
                   onClick={() => setLightboxIndex(i)}
                   role="button"
                   tabIndex={0}
@@ -106,19 +87,6 @@ export const EpisodeGrid = () => {
                     className="object-cover"
                     sizes="280px"
                   />
-
-                  {/* download label */}
-                  <a
-                    href={src}
-                    download
-                    onClick={(e) => e.stopPropagation()}
-                    className="absolute bottom-2 right-2 flex items-center gap-1 text-white/70 hover:text-white transition-colors duration-200"
-                    style={{ fontSize: '0.6875rem' }}
-                    aria-label={`Download poster ${i + 1}`}
-                  >
-                    <Download size={11} />
-                    Download
-                  </a>
                 </div>
               ))}
             </div>
@@ -128,25 +96,17 @@ export const EpisodeGrid = () => {
         {/* Details tab */}
         {activeTab === 'details' && (
           <>
-            <div className="flex items-baseline justify-between mb-7">
-              <span
-                className="uppercase text-white"
-                style={{
-                  fontFamily: 'var(--font-cinzel), serif',
-                  fontSize: '0.8125rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.25em',
-                }}
-              >
+            <div className="flex items-baseline justify-between mb-8">
+              <span className="uppercase text-white text-[0.8125rem] font-semibold tracking-[0.25em]">
                 {UI.episodeGrid.seasonLabel}
               </span>
             </div>
 
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-              <div className="animate-card-fade-in" style={{ animationDelay: '0s' }}>
+              <div className="animate-card-fade-in">
                 <CastCard />
               </div>
-              <div className="animate-card-fade-in" style={{ animationDelay: '0.06s' }}>
+              <div className="animate-card-fade-in">
                 <ShowDetailsCard />
               </div>
             </div>

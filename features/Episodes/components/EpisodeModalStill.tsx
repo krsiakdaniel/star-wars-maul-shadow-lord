@@ -8,7 +8,7 @@ import { type EpisodeModalStillProps } from './EpisodeModalStill.types'
 
 export const EpisodeModalStill = ({ episode }: EpisodeModalStillProps) => {
   return (
-    <div className="relative rounded-t-lg overflow-hidden bg-black" style={{ aspectRatio: '16/9' }}>
+    <div className="relative rounded-t-lg overflow-hidden bg-black aspect-video">
       {episode.still ? (
         <Image
           src={episode.still}
@@ -36,37 +36,19 @@ export const EpisodeModalStill = ({ episode }: EpisodeModalStillProps) => {
       />
       {/* info overlay */}
       <div className="absolute bottom-4 left-4 right-16 sm:bottom-6 sm:left-7 sm:right-20">
-        <p
-          className="mb-1.5 uppercase text-orange-500"
-          style={{
-            fontSize: '0.6875rem',
-            fontWeight: 600,
-            letterSpacing: '0.2em',
-          }}
-        >
+        <p className="mb-2 uppercase text-orange-500 text-[0.6875rem] font-semibold tracking-[0.2em]">
           {episode.chapter} · {UI.episodeGrid.seasonLabel}
         </p>
         <h2
-          className="text-white mb-2.5"
-          style={{
-            fontFamily: 'var(--font-cinzel), serif',
-            fontSize: 'clamp(1.25rem, 3vw, 1.875rem)',
-            fontWeight: 700,
-            lineHeight: 1.15,
-          }}
+          className="text-white mb-2 text-[clamp(1.25rem,3vw,1.875rem)] font-bold leading-[1.15]"
+          style={{ fontFamily: 'var(--font-cinzel), serif' }}
         >
           {episode.title}
         </h2>
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2">
           <span className="text-xs text-zinc-300">{episode.date}</span>
           <span className="w-0.75 h-0.75 rounded-full shrink-0 bg-zinc-700" />
           <span className="text-xs text-zinc-500">{episode.runtime}</span>
-          {episode.rating && (
-            <>
-              <span className="w-0.75 h-0.75 rounded-full shrink-0 bg-zinc-700" />
-              <span className="text-xs text-zinc-500">★ {episode.rating.toFixed(1)}</span>
-            </>
-          )}
         </div>
       </div>
     </div>

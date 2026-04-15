@@ -17,12 +17,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Maul — Shadow Lord',
+  title: 'Star Wars: Maul – Shadow Lord',
   description:
     'After the Clone Wars, a former Sith lord plots to rebuild his criminal empire on Janix — a planet untouched by the Empire.',
-  icons: {
-    icon: '/favicon.png',
-  },
 }
 
 const RootLayout = ({
@@ -33,7 +30,7 @@ const RootLayout = ({
   return (
     <html lang="en" className={`${cinzel.variable} ${inter.variable}`}>
       <body
-        className="text-base leading-[1.6]"
+        className="bg-zinc-950 text-base leading-[1.6]"
         style={{ fontFamily: 'var(--font-inter), sans-serif' }}
       >
         {children}

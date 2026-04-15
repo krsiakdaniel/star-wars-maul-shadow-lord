@@ -47,9 +47,8 @@ export const EpisodeModal = ({ episode, onClose }: EpisodeModalProps) => {
       }}
     >
       <div
-        className="relative w-full my-auto rounded-lg overflow-hidden"
+        className="relative w-full my-auto rounded-lg overflow-hidden max-w-215"
         style={{
-          maxWidth: '860px',
           background: 'var(--c-modal)',
           transform: open ? 'scale(1) translateY(0)' : 'scale(0.95) translateY(20px)',
           transition: 'transform 0.3s ease',
@@ -58,7 +57,7 @@ export const EpisodeModal = ({ episode, onClose }: EpisodeModalProps) => {
       >
         {/* close */}
         <button
-          className="absolute top-3.5 right-3.5 z-10 flex items-center justify-center w-8 h-8 rounded-full border border-white/10 text-zinc-400 text-base bg-black/60 transition-colors hover:bg-white/15 hover:text-white cursor-pointer"
+          className="absolute top-2 right-2 z-10 flex items-center justify-center w-8 h-8 rounded-full border border-white/10 text-zinc-400 text-base bg-black/60 transition-colors hover:bg-white/15 hover:text-white cursor-pointer"
           onClick={onClose}
           aria-label={UI.episodeModal.ariaClose}
         >
@@ -72,30 +71,16 @@ export const EpisodeModal = ({ episode, onClose }: EpisodeModalProps) => {
             {showTrailer && <EpisodeModalTrailer />}
 
             {/* body */}
-            <div className="px-4 pb-6 pt-5 sm:px-7 sm:pb-8 sm:pt-6">
+            <div className="px-4 md:px-8 pt-4 pb-8">
               <EpisodeModalActions imdbHref={imdbHref} onShowTrailer={() => setShowTrailer(true)} />
 
-              <p
-                className="mb-6 text-stone-400"
-                style={{
-                  fontSize: '0.875rem',
-                  fontWeight: 300,
-                  lineHeight: 1.75,
-                }}
-              >
+              <p className="mb-6 text-stone-400 text-sm font-light leading-[1.75]">
                 {episode.overview}
               </p>
 
-              <div className="grid grid-cols-2 gap-4 pt-5 sm:grid-cols-3 border-t border-white/6">
+              <div className="grid grid-cols-2 gap-4 pt-4 sm:grid-cols-3 border-t border-white/6">
                 <div>
-                  <p
-                    className="mb-1 uppercase text-zinc-700"
-                    style={{
-                      fontSize: '10px',
-                      fontWeight: 600,
-                      letterSpacing: '0.15em',
-                    }}
-                  >
+                  <p className="mb-1 uppercase text-zinc-700 text-[10px] font-semibold tracking-[0.15em]">
                     {UI.episodeModal.metaEpisode}
                   </p>
                   <p className="text-[0.8125rem] text-zinc-300">
@@ -103,27 +88,13 @@ export const EpisodeModal = ({ episode, onClose }: EpisodeModalProps) => {
                   </p>
                 </div>
                 <div>
-                  <p
-                    className="mb-1 uppercase text-zinc-700"
-                    style={{
-                      fontSize: '10px',
-                      fontWeight: 600,
-                      letterSpacing: '0.15em',
-                    }}
-                  >
+                  <p className="mb-1 uppercase text-zinc-700 text-[10px] font-semibold tracking-[0.15em]">
                     {UI.episodeModal.metaAirDate}
                   </p>
                   <p className="text-[0.8125rem] text-zinc-300">{episode.date}</p>
                 </div>
                 <div>
-                  <p
-                    className="mb-1 uppercase text-zinc-700"
-                    style={{
-                      fontSize: '10px',
-                      fontWeight: 600,
-                      letterSpacing: '0.15em',
-                    }}
-                  >
+                  <p className="mb-1 uppercase text-zinc-700 text-[10px] font-semibold tracking-[0.15em]">
                     {UI.episodeModal.metaSeason}
                   </p>
                   <p className="text-[0.8125rem] text-zinc-300">

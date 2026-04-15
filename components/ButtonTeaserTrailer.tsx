@@ -4,19 +4,13 @@ import { UI } from '@/texts/ui'
 
 import { type ButtonTeaserTrailerProps } from './ButtonTeaserTrailer.types'
 
-export const ButtonTeaserTrailer = ({ onClick, variant = 'modal' }: ButtonTeaserTrailerProps) => {
-  const isHero = variant === 'hero'
-  const textSize = isHero ? 'text-sm' : 'text-[0.8125rem]'
-  const border = isHero ? 'border-white/20' : 'border-white/15'
-  const bg = isHero ? 'bg-white/12' : 'bg-white/10'
-  const hoverBg = isHero ? 'hover:bg-white/20' : 'hover:bg-white/18'
-
+export const ButtonTeaserTrailer = ({ onClick }: ButtonTeaserTrailerProps) => {
   return (
     <button
       onClick={onClick}
-      className={`inline-flex items-center gap-2 px-6 py-3 text-white font-medium rounded border transition-colors cursor-pointer select-none ${textSize} ${border} ${bg} ${hoverBg}`}
+      className="inline-flex items-center gap-2 px-4 py-2 text-sm text-white font-medium rounded border border-white/20 bg-white/12 hover:bg-white/20 transition-colors cursor-pointer select-none"
     >
-      <Play size={isHero ? 15 : 14} fill="currentColor" />
+      <Play size={16} fill="currentColor" />
       {UI.hero.teaserTrailer}
     </button>
   )

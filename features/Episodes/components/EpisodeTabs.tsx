@@ -27,8 +27,7 @@ export const EpisodeTabs = ({ activeTab, onTabChange }: EpisodeTabsProps) => {
             onClick={() => onTabChange(tab.id)}
             onMouseEnter={() => setHoveredTab(tab.id)}
             onMouseLeave={() => setHoveredTab(null)}
-            className={`relative pb-3 select-none uppercase text-[1rem] font-semibold tracking-widest transition-colors cursor-pointer ${isHighlighted ? 'text-white' : 'text-zinc-500'}`}
-            style={{ fontFamily: 'var(--font-cinzel), serif' }}
+            className={`relative pb-4 select-none uppercase text-[1rem] font-semibold tracking-widest transition-colors cursor-pointer ${isHighlighted ? 'text-white' : 'text-zinc-500'}`}
           >
             {tab.label}
             {isHighlighted && (

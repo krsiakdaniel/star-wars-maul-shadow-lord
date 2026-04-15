@@ -26,7 +26,7 @@ export const EpisodeCard = ({ episode, index, onClick }: EpisodeCardProps) => {
     >
       {/* thumbnail */}
       {episode.still ? (
-        <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
+        <div className="relative w-full aspect-video">
           <Image
             src={episode.still}
             alt={episode.title}
@@ -37,7 +37,7 @@ export const EpisodeCard = ({ episode, index, onClick }: EpisodeCardProps) => {
           />
         </div>
       ) : (
-        <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
+        <div className="relative w-full aspect-video">
           <Image
             src={EPISODE_PLACEHOLDER}
             alt={episode.title}
@@ -50,34 +50,26 @@ export const EpisodeCard = ({ episode, index, onClick }: EpisodeCardProps) => {
       )}
 
       {/* play button */}
-      <div
-        className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 group-hover:opacity-100 scale-[0.85] group-hover:scale-100 transition-all duration-200"
-        style={{
-          width: '44px',
-          height: '44px',
-          border: '1.5px solid rgba(255,255,255,0.7)',
-          borderRadius: '50%',
-        }}
-      >
+      <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 group-hover:opacity-100 scale-[0.85] group-hover:scale-100 transition-all duration-200 w-11 h-11 border-[1.5px] border-white/70 rounded-full">
         <Play size={16} fill="white" color="white" className="ml-0.5" />
       </div>
 
       {/* info */}
       <div className="px-3 pt-2 pb-4">
-        <p
-          className="mb-0.75 uppercase text-orange-500"
-          style={{ fontSize: '0.625rem', fontWeight: 600, letterSpacing: '0.1em' }}
-        >
+        <p className="mb-1 uppercase text-orange-500 text-[0.625rem] font-semibold tracking-widest">
           {episode.chapter}
         </p>
-        <p
-          className="mb-1 overflow-hidden text-ellipsis whitespace-nowrap text-stone-200"
-          style={{ fontSize: '0.8125rem', fontWeight: 500, lineHeight: 1.3 }}
-        >
+        <p className="mb-1 overflow-hidden text-ellipsis whitespace-nowrap text-stone-200 text-[0.8125rem] leading-[1.3]">
           {episode.title}
         </p>
-        <p className="text-zinc-600" style={{ fontSize: '0.6875rem' }}>
+        <p className="text-zinc-600 text-[0.6875rem]">
           {episode.date}
+          {episode.runtime && (
+            <>
+              {' · '}
+              {episode.runtime}
+            </>
+          )}
         </p>
       </div>
     </div>

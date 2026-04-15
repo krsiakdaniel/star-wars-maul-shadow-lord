@@ -4,7 +4,7 @@ import { UI } from '@/texts/ui'
 
 export const EpisodeModalTrailer = () => {
   return (
-    <div className="relative rounded-t-lg overflow-hidden bg-black" style={{ aspectRatio: '16/9' }}>
+    <div className="relative rounded-t-lg overflow-hidden bg-black aspect-video">
       <iframe
         src={TEASER_EMBED_URL}
         className="absolute inset-0 w-full h-full border-none"

@@ -38,22 +38,21 @@ export const TrailerModal = ({ open, onClose }: TrailerModalProps) => {
       }}
     >
       <div
-        className="relative w-full rounded-lg overflow-hidden bg-black shadow-2xl"
+        className="relative w-full rounded-lg overflow-hidden bg-black shadow-2xl max-w-240"
         style={{
-          maxWidth: '960px',
           transform: open ? 'scale(1) translateY(0)' : 'scale(0.95) translateY(20px)',
           transition: 'transform 0.3s ease',
           boxShadow: '0 32px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06)',
         }}
       >
         <button
-          className="absolute top-3.5 right-3.5 z-10 flex items-center justify-center w-8 h-8 rounded-full border border-white/10 text-zinc-400 text-base bg-black/60 transition-colors hover:bg-white/15 hover:text-white cursor-pointer"
+          className="absolute top-2 right-2 z-10 flex items-center justify-center w-8 h-8 rounded-full border border-white/10 text-zinc-400 text-base bg-black/60 transition-colors hover:bg-white/15 hover:text-white cursor-pointer"
           onClick={onClose}
           aria-label={UI.trailer.ariaClose}
         >
           <X size={16} />
         </button>
-        <div className="relative" style={{ aspectRatio: '16/9' }}>
+        <div className="relative aspect-video">
           {open && (
             <iframe
               src={TEASER_EMBED_URL}
