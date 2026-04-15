@@ -13,6 +13,7 @@ export const UI = {
     pillGenre: 'Action, Adventure, Animation',
     visitDisney: 'Visit Disney+',
     teaserTrailer: 'Teaser Trailer',
+    actionTrailer: 'Action Trailer',
   },
   trailer: {
     ariaClose: 'Close trailer',

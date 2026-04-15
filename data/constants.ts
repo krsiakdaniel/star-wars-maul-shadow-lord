@@ -4,6 +4,9 @@ export const DISNEY_SHOW =
 export const IMDB_BASE = 'https://www.imdb.com/title/'
 export const IMDB_SHOW = 'https://www.imdb.com/title/tt36594331'
 
+const TRAILER_ID = 'kSGcFbM2RtM'
+export const TRAILER_EMBED_URL = `https://www.youtube.com/embed/${TRAILER_ID}?autoplay=1&rel=0`
+
 const TEASER_ID = 'oonACDq89BY'
 export const TEASER_EMBED_URL = `https://www.youtube.com/embed/${TEASER_ID}?autoplay=1&rel=0`
 
