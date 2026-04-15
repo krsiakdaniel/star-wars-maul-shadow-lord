@@ -35,6 +35,7 @@ export const Hero = () => {
             height={179}
             className="mb-8 w-[200px] sm:w-[280px] md:w-[400px] h-auto"
             style={{ height: 'auto' }}
+            sizes="(max-width: 640px) 200px, (max-width: 768px) 280px, 400px"
             priority
           />
 

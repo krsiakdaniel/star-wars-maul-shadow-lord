@@ -5,7 +5,7 @@ import { UI } from '@/texts/ui'
 export const Footer = () => {
   return (
     <footer className="flex flex-wrap justify-between items-center gap-4 px-8 py-6 md:px-16 md:py-8 border-t border-white/5 bg-(--c-footer)">
-      <span className="text-zinc-500 text-xs">
+      <span className="text-zinc-400 text-xs">
         {UI.footer.madeBy}{' '}
         <a
           href={UI.footer.domainUrl}
@@ -23,7 +23,7 @@ export const Footer = () => {
         height={40}
         className="opacity-40"
       />
-      <span className="text-zinc-500 text-xs">{UI.footer.disclaimer}</span>
+      <span className="text-zinc-400 text-xs">{UI.footer.disclaimer}</span>
     </footer>
   )
 }

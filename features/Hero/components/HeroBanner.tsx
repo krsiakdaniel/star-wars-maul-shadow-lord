@@ -1,15 +1,16 @@
+import Image from 'next/image'
+
 export const HeroBanner = () => {
   return (
     <>
-      {/* background */}
-      <div
+      {/* background — Next.js Image emits fetchpriority=high + preload link for LCP */}
+      <Image
+        src="/images/background/background-darth-maul.webp"
+        alt=""
+        fill
+        priority
+        className="object-cover object-[center_20%]"
         aria-hidden="true"
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `url('/images/background/background-darth-maul.webp')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 20%',
-        }}
       />
 
       {/* gentle gradient overlay */}

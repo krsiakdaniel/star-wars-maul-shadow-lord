@@ -30,7 +30,7 @@ export const EpisodeCard = ({ episode, index, onClick }: EpisodeCardProps) => {
               alt={episode.title}
               fill
               className="object-cover transition-transform duration-200 ease-out will-change-transform group-hover:scale-[1.05]"
-              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+              sizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 768px) calc(50vw - 2rem), calc(33vw - 2rem)"
               priority={index < 3}
             />
           </div>
@@ -41,7 +41,7 @@ export const EpisodeCard = ({ episode, index, onClick }: EpisodeCardProps) => {
               alt={episode.title}
               fill
               className="object-cover transition-transform duration-200 ease-out will-change-transform group-hover:scale-[1.05]"
-              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+              sizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 768px) calc(50vw - 2rem), calc(33vw - 2rem)"
               priority={index < 3}
             />
           </div>
@@ -64,7 +64,7 @@ export const EpisodeCard = ({ episode, index, onClick }: EpisodeCardProps) => {
         <p className="mb-1 overflow-hidden text-ellipsis whitespace-nowrap text-stone-200 text-[0.8125rem] leading-[1.3]">
           {episode.title}
         </p>
-        <p className="text-zinc-600 text-[0.6875rem]">
+        <p className="text-zinc-400 text-[0.6875rem]">
           {episode.date}
           {episode.runtime && (
             <>

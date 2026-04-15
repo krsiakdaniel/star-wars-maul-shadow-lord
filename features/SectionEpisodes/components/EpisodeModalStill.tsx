@@ -52,7 +52,7 @@ export const EpisodeModalStill = ({ episode }: EpisodeModalStillProps) => {
         <div className="flex flex-wrap items-center gap-2">
           <span className="text-xs text-zinc-300">{episode.date}</span>
           <span className="w-0.75 h-0.75 rounded-full shrink-0 bg-zinc-700" />
-          <span className="text-xs text-zinc-500">{episode.runtime}</span>
+          <span className="text-xs text-zinc-400">{episode.runtime}</span>
         </div>
       </div>
     </div>

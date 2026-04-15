@@ -34,7 +34,7 @@ export const TrailerModal = ({ open, onClose }: TrailerModalProps) => {
 
   return (
     <div
-      aria-hidden={!open}
+      inert={!open}
       className="fixed inset-0 z-1000 flex items-center justify-center p-6 transition-opacity duration-300 backdrop-blur-md bg-black/60"
       style={{
         opacity: open ? 1 : 0,
