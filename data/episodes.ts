@@ -53,7 +53,7 @@ export const EPISODES: Episode[] = [
     runtime: '32 min',
     overview:
       'The Inquisitors close in on Devon and her master, forcing an unlikely and uneasy alliance between Devon and Maul — two people who want very different things from each other.',
-    still: null,
+    still: '/images/episodes/episode-5-thumb.webp',
     imdbId: 'tt39389425',
   },
   {
@@ -64,7 +64,7 @@ export const EPISODES: Episode[] = [
     runtime: '27 min',
     overview:
       "Maul and Devon are hunted through Janix's lower city by both the Inquisitors and the combined forces of the crime lords he betrayed. No one is safe.",
-    still: null,
+    still: '/images/episodes/episode-6-thumb.webp',
     imdbId: 'tt39389436',
   },
   {
@@ -75,7 +75,7 @@ export const EPISODES: Episode[] = [
     runtime: '31 min',
     overview:
       'As Janix descends into chaos, Lawson must choose between following orders and protecting the people of the city — including a Jedi he was never supposed to know existed.',
-    still: null,
+    still: '/images/episodes/episode-7-thumb.webp',
     imdbId: 'tt39389465',
   },
   {
@@ -86,7 +86,7 @@ export const EPISODES: Episode[] = [
     runtime: '29 min',
     overview:
       "Devon confronts the truth of what Maul's apprenticeship would mean for her — and what it would cost. The line between survival and surrender grows dangerously thin.",
-    still: null,
+    still: '/images/episodes/episode-8-thumb.webp',
     imdbId: 'tt39389472',
   },
   {
@@ -97,7 +97,7 @@ export const EPISODES: Episode[] = [
     runtime: '33 min',
     overview:
       'With the Empire tightening its grip, former enemies are forced to cooperate. Maul makes a move that shocks everyone — including himself.',
-    still: null,
+    still: '/images/episodes/episode-9-thumb.webp',
     imdbId: 'tt39389479',
   },
   {
@@ -108,7 +108,7 @@ export const EPISODES: Episode[] = [
     runtime: '38 min',
     overview:
       'The fates of Maul, Devon, and Janix converge in a final confrontation that will determine who the Shadow Lord truly is — and what price power demands.',
-    still: null,
+    still: '/images/episodes/episode-10-thumb.webp',
     imdbId: 'tt39389486',
   },
 ]

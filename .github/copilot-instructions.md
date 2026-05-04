@@ -83,7 +83,7 @@ texts/
 public/
   images/
     background/           # hero background image
-    episodes/             # episode-N-thumb.webp (1–4); episodes 5–10 use EPISODE_PLACEHOLDER
+    episodes/             # episode-N-thumb.webp (1–10)
     gallery/              # gallery stills
     logo/                 # disney-logo.webp
     posters/              # poster images
@@ -179,7 +179,7 @@ npx tsc --noEmit # type check
 - Local images go in `public/images/` and are referenced as `/images/…` (no `public/` prefix)
 - Remote images require a `remotePatterns` entry in `next.config.ts`
 - Currently allowed remote host: `img.youtube.com`
-- Episodes 1–4 have individual stills (`episode-N-thumb.webp`); episodes 5–10 use `EPISODE_PLACEHOLDER` (`/images/darth-maul-preview.webp`)
+- All 10 episodes have individual stills (`episode-N-thumb.webp`)
 
 ---
 
